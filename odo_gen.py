@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(getattr(sys, "_MEIPASS", Path(__file__).resolve().parent))
 DEFAULT_CONFIG_PATH = BASE_DIR / "assets" / "profiles" / "default" / "config.json"
 INPUT_PATTERN = re.compile(r"^\d+(?:\.\d)?$")
 

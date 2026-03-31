@@ -6,6 +6,8 @@ __pycache__/
 # Salidas generadas
 o_*.jpg
 usadas_*/
+build/
+dist/
 
 # Archivos de sistema/editor
 .DS_Store
