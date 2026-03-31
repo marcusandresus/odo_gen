@@ -1,0 +1,23 @@
+{
+    "archivo_fondo": "template.png",
+    "fuente": {
+        "archivo": "../../fonts/DS-DIGI.TTF",
+        "size": 240,
+        "color_hex": "#00FF00"
+    },
+    "ajuste_texto": {
+        "dx": 5,
+        "dy": 30
+    },
+    "tamanno": [129, 284],
+    "celdas": { 
+        "decimal":  [2199, 635, 384, 2328],
+        "entero_1": [1815, 635, 225, 1944],
+        "entero_2": [1590, 635, 230, 1719],
+        "entero_3": [1360, 635, 229, 1489],
+        "entero_4": [1131, 635, 229, 1260],
+        "entero_5": [902, 635, 229, 1031],
+        "entero_6": [673, 635, 229, 802],
+        "entero_7": [444, 635, 444, 573]
+    }
+}
