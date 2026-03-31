@@ -8,6 +8,7 @@ o_*.jpg
 usadas_*/
 build/
 dist/
+release/
 
 # Archivos de sistema/editor
 .DS_Store
