@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_CONFIG_PATH = BASE_DIR / "assets" / "profiles" / "default" / "config.json"
-INPUT_PATTERN = re.compile(r"^\d+\.\d$")
+INPUT_PATTERN = re.compile(r"^\d+(?:\.\d)?$")
 
 
 def hex_to_rgb(hex_str):
@@ -30,12 +30,15 @@ def generar_odometro(numero_str, config_path=DEFAULT_CONFIG_PATH):
     if conf is None:
         return
 
-    # 1. Validar formato de entrada: uno o más enteros y exactamente un decimal.
+    # 1. Validar formato de entrada: enteros con decimal opcional de un solo digito.
     if not INPUT_PATTERN.fullmatch(numero_str):
-        print("Error: El formato debe ser numerico y usar exactamente un decimal (ejemplo: 1234567.8)")
+        print("Error: El formato debe ser numerico, con decimal opcional de un digito (ejemplos: 1234567 o 1234567.8)")
         return
 
-    enteros, decimal = numero_str.split(".")
+    if "." in numero_str:
+        enteros, decimal = numero_str.split(".")
+    else:
+        enteros, decimal = numero_str, "0"
 
     celdas_enteros = sorted(
         key for key in conf["celdas"] if key.startswith("entero_")
